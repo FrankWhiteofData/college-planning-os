@@ -1,0 +1,13 @@
+{
+  "name": "college-planning-os",
+  "version": "1.0.0",
+  "private": true,
+  "description": "College Planning OS — student college-planning platform with a secure College Scorecard proxy.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

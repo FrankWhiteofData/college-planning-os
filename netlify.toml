@@ -1,0 +1,17 @@
+# Netlify configuration for College Planning OS
+# Publishes the static app from /public and runs the College Scorecard
+# proxy as a serverless function so the API key stays server-side.
+
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Send every /api/* request to the serverless function (keeps the API key
+# server-side; the browser only ever talks to same-origin /api/*).
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
