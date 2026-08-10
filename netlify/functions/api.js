@@ -70,8 +70,7 @@ async function getById(id) { const data = await call({ id: String(id) }); return
 
 exports.handler = async (event) => {
   // Path after the function name, e.g. "/status", "/colleges/search", "/colleges/240727"
-  let sub = (event.path || '').replace(/^.*\/functions\/api/, '') || '/';
-  if (sub === '' ) sub = '/';
+  let sub = (event.path || '').replace(/^\/\.netlify\/functions\/api/, '').replace(/^\/api/, '') || '/';  if (sub === '' ) sub = '/';
   const q = event.queryStringParameters || {};
   try {
     if (sub === '/status' || sub === '/status/') {
