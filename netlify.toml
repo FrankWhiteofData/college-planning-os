@@ -3,7 +3,7 @@
 # proxy as a serverless function so the API key stays server-side.
 
 [build]
-  publish = "."
+  publish = "public"
   functions = "netlify/functions"
 
 [build.environment]
